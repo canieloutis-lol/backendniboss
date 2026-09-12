@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Dashboard</h1>
     @extends('layout.layout')
     @section('sidebar')
     @include('component.sidebar')
