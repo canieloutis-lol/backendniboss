@@ -3,6 +3,7 @@
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\SiswaController;
 
 
 
@@ -25,3 +26,10 @@ Route::get("/barang/update/{id}", [BarangController::class, 'update_view'])->nam
 Route::put("/barang/{id}", [BarangController::class, 'update'])->name('barang.update');
 Route::get("/barang/{id}", [BarangController::class, 'destroy'])->name('barang.delete');
 Route::get("/barang", [BarangController::class, 'index']);
+Route::get("/siswa/add", [SiswaController::class, 'store_view'])->name('siswa.tambah');
+Route::post("/siswa/add", [SiswaController::class, 'store']);
+Route::get("/siswa/update/{id}", [SiswaController::class, 'update_view'])->name('siswa.edit');
+Route::put("/siswa/{id}", [SiswaController::class, 'update'])->name('siswa.update');
+Route::get("/siswa/{id}", [SiswaController::class, 'destroy'])->name('siswa.delete');
+Route::get("/siswa", [SiswaController::class, 'index']);
+Route::resource('siswa', SiswaController::class);

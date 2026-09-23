@@ -1,13 +1,13 @@
-<!doctype html>
-<html lang="id">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD Tugas</title>
-    @vite('resources/css/app.css')
+    <title>Vite Siswa</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-gray-100 min-h-screen">
-    <div class="max-w-3xl mx-auto py-10 px-4">
+<body class="bg-black text-white min-h-screen">
+    <div class="container mx-auto py-6">
         @yield('content')
     </div>
 </body>
