@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\models\barang;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreBarangRequest;
 
 class BarangController extends Controller
 
@@ -30,11 +31,14 @@ class BarangController extends Controller
      */
     public function store(Request $request)
     {
-        $barang = new Barang();
-        $barang->nama  = $request->nama;
-        $barang->harga = $request->harga;
-        $barang->stok = $request->stok;
-        $barang->save();
+        $validate = $request->validate([
+            'nama' => 'required|string',
+            'harga' => 'required|numeric',
+            'stok' => 'required|integer|min:0',
+        ]);
+
+
+        Barang::create($validate);
 
         return redirect('/barang');
     }

@@ -33,3 +33,9 @@ Route::put("/siswa/{id}", [SiswaController::class, 'update'])->name('siswa.updat
 Route::get("/siswa/{id}", [SiswaController::class, 'destroy'])->name('siswa.delete');
 Route::get("/siswa", [SiswaController::class, 'index']);
 Route::resource('siswa', SiswaController::class);
+Route::get("/buku", [App\Http\Controllers\bukuController::class, 'index']);
+Route::get("/buku/tambah", [App\Http\Controllers\bukuController::class, 'store_view'])->name('buku.tambah');
+Route::post("/buku/tambah", [App\Http\Controllers\bukuController::class, 'store']);
+Route::get("/buku/update/{id}", [App\Http\Controllers\bukuController::class, 'update_view'])->name('buku.edit');
+Route::put("/buku/{id}", [App\Http\Controllers\bukuController::class, 'update'])->name('buku.update');
+Route::get("/buku/{id}", [App\Http\Controllers\bukuController::class, 'destroy'])->name('buku.delete');
